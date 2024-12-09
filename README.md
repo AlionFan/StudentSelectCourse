@@ -19,7 +19,8 @@ cd ~
 mkdir venv
 cd venv
 sudo apt install python@3.12  python3.12-venv
-source ./bin/activate
+python3.12 -m venv SQL
+source ./SQL/bin/activate
 pip install -r requirements.txt
 ```
 
