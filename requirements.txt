@@ -1,0 +1,8 @@
+cffi==1.17.1
+cryptography==43.0.3
+pycparser==2.22
+PyMySQL==1.1.1
+PySide6==6.8.0.2
+PySide6_Addons==6.8.0.2
+PySide6_Essentials==6.8.0.2
+shiboken6==6.8.0.2
