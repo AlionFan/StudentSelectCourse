@@ -1,17 +1,18 @@
 import pymysql
- 
+
 class CreateDatabase():
     def __init__(self, new_database):
         self.new_database = new_database
- 
+    def str_quyinhao(self,a):
+        return a[1:len(a)-1]
     def create_new_database(self,remake=1):
         #remake:初始化参数 remake=0时初始化
         # 建立数据库连接
         connection = pymysql.connect(
             host='localhost',
             user='root',
-            # password='ADthq123',
-            password='!1004ROOTpasswd',
+            password='ADthq123',
+            #password='!1004ROOTpasswd',
             cursorclass=pymysql.cursors.DictCursor
         )
  
@@ -23,27 +24,57 @@ class CreateDatabase():
 
         db_ex=any(new_database_name in dbname for dbname in dbnames)
         if db_ex ==True or remake==0:
+            if remake==0:
+                cursor.execute(f"DROP DATABASE IF EXISTS {new_database_name};")#删除
+                connection.commit()
+                #print("删除成功")
+                #cursor.execute("SHOW DATABASES;")
+                #dbnames=cursor.fetchall()
+                #for i in dbnames:
+                    #print(i)
+
             cursor.execute(f"CREATE DATABASE IF NOT EXISTS {new_database_name};")      # 执行新建数据库的SQL语句
-            # 关闭游标
             cursor.close()
             # 关闭数据库连接
             connection.close()
             connection = pymysql.connect(
                 host='localhost',
                 user='root',
-                # password='ADthq123',
-                password='!1004ROOTpasswd',
+                password='ADthq123',
+                #password='!1004ROOTpasswd',
                 database='StudentCourseSystem',
                 charset='utf8mb4',
                 cursorclass=pymysql.cursors.DictCursor
             )
             ssscursor=connection.cursor()
-            ssscursor.execute("CREATE TABLE IF NOT EXISTS students (student_id INT PRIMARY KEY,name VARCHAR(50) NOT NULL,password VARCHAR(100) NOT NULL,major VARCHAR(50),grade VARCHAR(10));")
-            ssscursor.execute("CREATE TABLE IF NOT EXISTS courses (course_id INT PRIMARY KEY,course_name VARCHAR(100) NOT NULL,credit INT,teacher VARCHAR(50),schedule VARCHAR(100));")
-            ssscursor.execute("CREATE TABLE IF NOT EXISTS enrollments (id INT PRIMARY KEY AUTO_INCREMENT,student_id INT,course_id INT,FOREIGN KEY (student_id) REFERENCES students(student_id),FOREIGN KEY (course_id) REFERENCES courses(course_id));")
-            ssscursor.execute("INSERT INTO courses (course_id, course_name, credit, teacher, schedule,courseNumber) VALUES(1, '高等数学', 4, '王老师', '周一 8:00-10:00',0),(2, '大学英语', 2, '李老师', '周二 10:00-12:00',0),(3, '数据结构', 3, '张老师', '周三 14:00-16:00',0);")
-            ssscursor.execute("INSERT INTO students (student_id, name, password, major, grade) VALUES(2021001, '张三', 'passwd001', '计算机科学', '2021'),(2021002, '李四', 'passwd002', '电子工程', '2021');")
+            ssscursor.execute("CREATE TABLE IF NOT EXISTS students ( studentID INT UNIQUE PRIMARY KEY,studentName VARCHAR(50) NOT NULL,studentPassword VARCHAR(100) NOT NULL,studentMajor VARCHAR(50),studentGrade YEAR);")
+            ssscursor.execute("CREATE TABLE IF NOT EXISTS courses ( courseID INT UNIQUE PRIMARY KEY, courseName 	VARCHAR(100) NOT NULL,courseNumber	INT NOT NULL,courseCredit INT,courseTeacher VARCHAR(50),courseSchedule VARCHAR(100));")
+            ssscursor.execute("CREATE TABLE IF NOT EXISTS enrollments ( ID INT PRIMARY KEY AUTO_INCREMENT,studentID INT,courseID INT,FOREIGN KEY (studentID) REFERENCES students(studentID),FOREIGN KEY (courseID) REFERENCES courses(courseID));")
+            ssscursor.execute("CREATE TABLE IF NOT EXISTS administrators (adminID INT UNIQUE PRIMARY KEY,adminPassword VARCHAR(100) NOT NULL);")
+            ssscursor.execute("INSERT INTO administrators (adminID,adminPassword) VALUES (1001,'admin');")
             connection.commit()
+            with open('./Data/CourseData.txt', 'r',encoding='utf-8') as file:
+                for line in file.readlines():
+                    courseID, courseName, courseNumber, courseCredit, courseTeacher, courseSchedule=line.split(',')
+                    courseID=int(courseID)
+                    #courseName=self.str_quyinhao(courseName)
+                    #courseTeacher=self.str_quyinhao(courseTeacher)
+                    #courseSchedule=courseSchedule[1:len(courseSchedule)-2]
+                    courseNumber=int(courseNumber)
+                    courseCredit=int(courseCredit)
+                    ssscursor.execute(f"INSERT INTO courses ( courseID, courseName, courseNumber, courseCredit, courseTeacher, courseSchedule) VALUES ({courseID}, {courseName}, {courseNumber}, {courseCredit}, {courseTeacher}, {courseSchedule})")
+            with open('./Data/StudentData.txt', 'r',encoding='utf-8') as file:
+                for line in file.readlines():
+                    studentID, studentName, studentPassword, studentMajor, studentGrade=line.split(',')
+                    studentID=int(studentID)
+                    #studentName=self.str_quyinhao(studentName)
+                    #studentPassword=self.str_quyinhao(studentPassword)
+                    #studentMajor=self.str_quyinhao(studentMajor)
+                    studentGrade=int(studentGrade)
+                    ssscursor.execute(f"INSERT INTO students (studentID, studentName, studentPassword, studentMajor, studentGrade) VALUES ({studentID}, {studentName}, {studentPassword}, {studentMajor}, {studentGrade})")
+            #ssscursor.execute("")
+            connection.commit()
+
             return
         else:
             cursor.close()
@@ -53,7 +84,7 @@ class CreateDatabase():
 
 def new_create(remake=1):
     try:
-        CreateDatabase('database_test').create_new_database(remake)
+        CreateDatabase('StudentCourseSystem').create_new_database(remake)
  
     except pymysql.Error as e:
         print(f'新建数据库失败，{e}')

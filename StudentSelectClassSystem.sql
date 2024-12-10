@@ -19,7 +19,11 @@ CREATE TABLE IF NOT EXISTS courses (
     courseTeacher 		VARCHAR(50),
     courseSchedule 		VARCHAR(100)
 );
-
+-- 管理员
+CREATE TABLE IF NOT EXISTS administrators(
+    adminID 			INT UNIQUE PRIMARY KEY,
+    adminPassword 	VARCHAR(100) NOT NULL
+);
 
 -- 教师表 
 -- CREATE TABLE IF NOT EXISTS teachers (
@@ -34,10 +38,17 @@ CREATE TABLE IF NOT EXISTS enrollments (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     studentID INT,
     courseID INT,
-    FOREIGN KEY (studentID) REFERENCES students(studentID),
-    FOREIGN KEY (courseID) REFERENCES courses(courseID)
+    FOREIGN KEY (studentID) REFERENCES students(studentID) ON DELETE CASCADE,
+    FOREIGN KEY (courseID) REFERENCES courses(courseID) ON DELETE CASCADE
 );
 
+-- 插入管理员
+INSERT INTO administrators(adminID,,adminPassword) VALUES
+(1001,'admin')
+--删除课程
+DELETE FROM courses WHERE courseID=couresID_need;
+--删除学生
+DELETE FROM students WHERE studentID=studentID_need;
 
 -- 插入示例课程数据
 INSERT INTO courses (courseID, courseName, courseNumber, courseCredit, courseTeacher, courseSchedule) VALUES

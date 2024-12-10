@@ -78,7 +78,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.load_enrolled_courses()  # 更新已选课程列表
 
 if __name__ == "__main__":
-    # db_create.new_create(0)
+    db_create.new_create()
     app = QtWidgets.QApplication(sys.argv)
     window = MainWindow()
     window.show()
