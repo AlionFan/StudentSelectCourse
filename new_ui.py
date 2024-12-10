@@ -112,10 +112,10 @@ class Ui_MainWindow(object):
         self.label.setGeometry(QRect(40, 10, 58, 16))
         self.studentid = QLineEdit(self.adminpage)
         self.studentid.setObjectName(u"studentid")
-        self.studentid.setGeometry(QRect(130, 30, 113, 21))
+        self.studentid.setGeometry(QRect(380, 30, 113, 21))
         self.label_3 = QLabel(self.adminpage)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(150, 10, 58, 16))
+        self.label_3.setGeometry(QRect(410, 10, 58, 16))
         self.studentpassword = QLineEdit(self.adminpage)
         self.studentpassword.setObjectName(u"studentpassword")
         self.studentpassword.setGeometry(QRect(250, 30, 113, 21))
@@ -139,7 +139,7 @@ class Ui_MainWindow(object):
         self.coursename.setGeometry(QRect(10, 310, 113, 21))
         self.label_7 = QLabel(self.adminpage)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(150, 290, 58, 16))
+        self.label_7.setGeometry(QRect(510, 290, 58, 16))
         self.label_8 = QLabel(self.adminpage)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setGeometry(QRect(280, 290, 58, 16))
@@ -163,7 +163,7 @@ class Ui_MainWindow(object):
         self.label_11.setGeometry(QRect(40, 290, 58, 16))
         self.courseid = QLineEdit(self.adminpage)
         self.courseid.setObjectName(u"courseid")
-        self.courseid.setGeometry(QRect(130, 310, 113, 21))
+        self.courseid.setGeometry(QRect(490, 310, 113, 21))
         self.studenttable = QTableWidget(self.adminpage)
         if (self.studenttable.columnCount() < 4):
             self.studenttable.setColumnCount(4)
@@ -176,7 +176,7 @@ class Ui_MainWindow(object):
         __qtablewidgetitem15 = QTableWidgetItem()
         self.studenttable.setHorizontalHeaderItem(3, __qtablewidgetitem15)
         self.studenttable.setObjectName(u"studenttable")
-        self.studenttable.setGeometry(QRect(10, 120, 411, 151))
+        self.studenttable.setGeometry(QRect(10, 120, 431, 151))
         self.coursetable = QTableWidget(self.adminpage)
         if (self.coursetable.columnCount() < 6):
             self.coursetable.setColumnCount(6)
@@ -208,7 +208,7 @@ class Ui_MainWindow(object):
         self.delectcourse.setGeometry(QRect(490, 370, 100, 32))
         self.label_2 = QLabel(self.adminpage)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(490, 250, 301, 111))
+        self.label_2.setGeometry(QRect(450, 150, 301, 111))
         self.stackedWidget.addWidget(self.adminpage)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -298,6 +298,6 @@ class Ui_MainWindow(object):
         self.coursedate.setText(QCoreApplication.translate("MainWindow", u"\u5468\u4e09 16:00-18:00", None))
         self.delectstudent.setText(QCoreApplication.translate("MainWindow", u"\u5220\u9664\u5b66\u751f", None))
         self.delectcourse.setText(QCoreApplication.translate("MainWindow", u"\u5220\u9664\u8bfe\u7a0b", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:24pt; color:#ff40ff;\">\u5220\u9664\u5b66\u751f\u548c\u8bfe\u7a0b\u4ec5\u6839\u636eID\u53f7</span></p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt; font-weight:700; color:#ff40ff;\">\u5220\u9664\u5b66\u751f\u548c\u8bfe\u7a0b\u4ec5\u6839\u636eID\u53f7</span></p></body></html>", None))
     # retranslateUi
 

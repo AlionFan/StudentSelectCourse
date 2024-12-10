@@ -279,7 +279,7 @@
      <widget class="QLineEdit" name="studentid">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>380</x>
         <y>30</y>
         <width>113</width>
         <height>21</height>
@@ -292,7 +292,7 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>410</x>
         <y>10</y>
         <width>58</width>
         <height>16</height>
@@ -396,7 +396,7 @@
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>510</x>
         <y>290</y>
         <width>58</width>
         <height>16</height>
@@ -500,7 +500,7 @@
      <widget class="QLineEdit" name="courseid">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>490</x>
         <y>310</y>
         <width>113</width>
         <height>21</height>
@@ -515,7 +515,7 @@
        <rect>
         <x>10</x>
         <y>120</y>
-        <width>411</width>
+        <width>431</width>
         <height>151</height>
        </rect>
       </property>
@@ -635,14 +635,14 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>250</y>
+        <x>450</x>
+        <y>150</y>
         <width>301</width>
         <height>111</height>
        </rect>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; color:#ff40ff;&quot;&gt;删除学生和课程仅根据ID号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700; color:#ff40ff;&quot;&gt;删除学生和课程仅根据ID号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
