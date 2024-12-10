@@ -11,8 +11,8 @@ class CreateDatabase():
         connection = pymysql.connect(
             host='localhost',
             user='root',
-            password='ADthq123',
-            #password='!1004ROOTpasswd',
+            # password='ADthq123',
+            password='!1004ROOTpasswd',
             cursorclass=pymysql.cursors.DictCursor
         )
  

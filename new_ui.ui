@@ -17,14 +17,14 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-10</x>
       <y>0</y>
-      <width>800</width>
-      <height>600</height>
+      <width>811</width>
+      <height>601</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="loginPage">
      <widget class="QLabel" name="labelStudentId">
@@ -37,7 +37,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>学号：</string>
+       <string>账号：</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="studentIdLineEdit">
@@ -221,6 +221,390 @@
         <string>选课人数</string>
        </property>
       </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="adminpage">
+     <widget class="QPushButton" name="addstudent">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>90</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>添加学生</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addcourse">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>370</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>添加课程</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="studentname">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>石头</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>10</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>姓名</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="studentid">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>30</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>10</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>学号</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="studentpassword">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>30</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>123456</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>10</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>密码</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="studentmajor">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>人工智能</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>70</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>专业</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="studentgrade">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>90</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>2022</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>70</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>年级</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="coursename">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>数据库原理</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>290</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>课程ID</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>290</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>课程容量</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="coursenumber">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>310</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>25</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="courseteacher">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>370</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>李老师</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>350</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>课程学分</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="coursecredit">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>370</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>350</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>教师</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>290</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>课程</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="courseid">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>310</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="studenttable">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>411</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>学生ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>学生名</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>专业</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>年级</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="coursetable">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>410</y>
+        <width>611</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>课程名称</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>课程ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>教师</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>课程学分</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>日期</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>选课人数</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLabel" name="label_42">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>350</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>日期</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="coursedate">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>370</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>周三 16:00-18:00</string>
+      </property>
      </widget>
     </widget>
    </widget>

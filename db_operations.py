@@ -3,8 +3,8 @@ import pymysql
 connection = pymysql.connect(
     host='localhost',
     user='root',
-    password='ADthq123',
-    #password="!1004ROOTpasswd",
+    #password='ADthq123',
+    password="!1004ROOTpasswd",
     database='StudentCourseSystem',
     charset='utf8mb4',
     cursorclass=pymysql.cursors.DictCursor
@@ -30,13 +30,32 @@ def verify_user_admin(adminID,adminPassword):
 #学生新增
 def insert_student(studentID, studentName, studentPassword, studentMajor, studentGrade):
     with connection.cursor() as cursor:
-        cursor.execute(f"INSERT INTO students (studentID, studentName, studentPassword, studentMajor, studentGrade) VALUES ({studentID}, {studentName}, {studentPassword}, {studentMajor}, {studentGrade})")
+        sql = """
+            INSERT INTO students (
+                studentID, 
+                studentName, 
+                studentPassword, 
+                studentMajor, 
+                studentGrade) 
+                VALUES (%s, %s, %s, %s, %s)
+            """
+        cursor.execute(sql, (studentID, studentName, studentPassword, studentMajor, studentGrade))
         connection.commit()
         return "ID为"+str(studentID)+"的学生已新增"
 #课程新增
-def insert_student(courseID, courseName, courseNumber, courseCredit, courseTeacher, courseSchedule):
+def insert_course(courseID, courseName, courseNumber, courseCredit, courseTeacher, courseSchedule):
     with connection.cursor() as cursor:
-        cursor.execute(f"INSERT INTO courses ( courseID, courseName, courseNumber, courseCredit, courseTeacher, courseSchedule) VALUES ({courseID}, {courseName}, {courseNumber}, {courseCredit}, {courseTeacher}, {courseSchedule})")
+        sql = """
+        INSERT INTO courses (
+            courseID,
+            courseName,
+            courseNumber,
+            courseCredit,
+            courseTeacher,
+            courseSchedule
+        ) VALUES (%s, %s, %s, %s, %s, %s)
+        """
+        cursor.execute(sql, (courseID, courseName, courseNumber, courseCredit, courseTeacher, courseSchedule))
         connection.commit()
         return "课程新增成功"
 #学生删除
@@ -61,6 +80,13 @@ def delete_course(courseID):
 def get_courses():
     with connection.cursor() as cursor:
         sql = "SELECT * FROM courses"
+        cursor.execute(sql)
+        return cursor.fetchall()
+
+# 获取学生信息
+def get_students():
+    with connection.cursor() as cursor:
+        sql = "SELECT * FROM students"
         cursor.execute(sql)
         return cursor.fetchall()
 
