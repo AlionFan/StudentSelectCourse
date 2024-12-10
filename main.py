@@ -22,6 +22,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.refreshButton.clicked.connect(self.load_courses)
         self.addstudent.clicked.connect(self.insert_student)
         self.addcourse.clicked.connect(self.insert_course)
+        self.delectstudent.clicked.connect(self.drop_student)
+        self.delectcourse.clicked.connect(self.drop_course_admin)
 
     def login(self):
         studentID = self.studentIdLineEdit.text()
@@ -96,6 +98,16 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         cdate = self.coursedate.text()
         cnum = self.coursenumber.text()
         print(db_operations.insert_course(cid, cname, cnum, ccredit, cteacher, cdate))
+        self.load_courses_admin()
+    
+    def drop_student(self):
+        sid = self.studentid.text()
+        print(db_operations.delete_student(sid))
+        self.load_students()
+
+    def drop_course_admin(self):
+        cid = self.courseid.text()
+        print(db_operations.delete_course(cid))
         self.load_courses_admin()
 
     def load_enrolled_courses(self):

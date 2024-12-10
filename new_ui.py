@@ -200,12 +200,21 @@ class Ui_MainWindow(object):
         self.coursedate = QLineEdit(self.adminpage)
         self.coursedate.setObjectName(u"coursedate")
         self.coursedate.setGeometry(QRect(250, 370, 113, 21))
+        self.delectstudent = QPushButton(self.adminpage)
+        self.delectstudent.setObjectName(u"delectstudent")
+        self.delectstudent.setGeometry(QRect(390, 90, 100, 32))
+        self.delectcourse = QPushButton(self.adminpage)
+        self.delectcourse.setObjectName(u"delectcourse")
+        self.delectcourse.setGeometry(QRect(490, 370, 100, 32))
+        self.label_2 = QLabel(self.adminpage)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(490, 250, 301, 111))
         self.stackedWidget.addWidget(self.adminpage)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -287,5 +296,8 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"\u9009\u8bfe\u4eba\u6570", None));
         self.label_42.setText(QCoreApplication.translate("MainWindow", u"\u65e5\u671f", None))
         self.coursedate.setText(QCoreApplication.translate("MainWindow", u"\u5468\u4e09 16:00-18:00", None))
+        self.delectstudent.setText(QCoreApplication.translate("MainWindow", u"\u5220\u9664\u5b66\u751f", None))
+        self.delectcourse.setText(QCoreApplication.translate("MainWindow", u"\u5220\u9664\u8bfe\u7a0b", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:24pt; color:#ff40ff;\">\u5220\u9664\u5b66\u751f\u548c\u8bfe\u7a0b\u4ec5\u6839\u636eID\u53f7</span></p></body></html>", None))
     # retranslateUi
 
